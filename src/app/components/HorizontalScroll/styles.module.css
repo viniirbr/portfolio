@@ -1,0 +1,3 @@
+.slider:hover {
+    animation-play-state: paused;
+}
