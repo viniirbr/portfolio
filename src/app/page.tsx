@@ -1,13 +1,12 @@
 import { Inter } from "next/font/google";
-import { getProjects } from "@/base/sanity/sanity-utils";
-import { Tab } from "./components/Tab";
-import { ProjectsGrid } from "./components/ProjectsGrid";
-import { HorizontalScroll } from "./components/HorizontalScroll/HorizontalScroll";
+import { Tab } from "./components/UI/Tab";
+import { ProjectsGrid } from "./components/Project/ProjectsGrid";
+import { HorizontalScroll } from "./components/UI/HorizontalScroll/HorizontalScroll";
+import { ArticlesGrid } from "./components/Article/ArticlesGrid";
 
 const inter = Inter({ subsets: ["latin"], weight: ["500", "700", "800"] });
 
 export default async function Home() {
-  const projects = await getProjects();
   return (
     <main
       className={`${inter.className} flex min-h-screen flex-col gap-14 py-20 px-4`}
@@ -33,9 +32,14 @@ export default async function Home() {
         tabs={[
           {
             title: "My Projects",
-            content: <ProjectsGrid projects={projects} />,
+            // @ts-expect-error Server Component
+            content: <ProjectsGrid />,
           },
-          { title: "Articles", content: <p>Articles Grid</p> },
+          {
+            title: "Articles",
+            // @ts-expect-error Server Component
+            content: <ArticlesGrid />,
+          },
         ]}
       />
     </main>

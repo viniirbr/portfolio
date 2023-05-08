@@ -31,11 +31,11 @@ export function HorizontalScroll() {
   }, [scrolling]);
 
   return (
-    <section className="relative h-16 w-full overflow-hidden">
+    <section className="relative py-3 w-full overflow-hidden">
       <div
         className={`${
           scrolling ? "animate-automaticScrollX" : ""
-        } flex w-[calc(280px*14)] gap-8 ${styles.slider}`}
+        } flex w-[calc(280px*14)] gap-8 h-full ${styles.slider}`}
       >
         <span className="flex items-center gap-8">
           {logos.map((logo, index) => (
@@ -45,7 +45,7 @@ export function HorizontalScroll() {
               width={50}
               height={50}
               alt={index.toString()}
-              className="hover:scale-110 transition-transform ease-in-out duration-500"
+              className="hover:scale-110 transition-transform ease-in-out duration-500 lg:w-16"
             />
           ))}
         </span>

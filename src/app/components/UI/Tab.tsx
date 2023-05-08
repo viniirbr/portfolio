@@ -1,7 +1,6 @@
 "use client";
 import { Tab } from "@/types/Tab";
 import * as Tabs from "@radix-ui/react-tabs";
-import { useState } from "react";
 
 interface Props {
   tabs: Tab[];

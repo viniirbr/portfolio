@@ -1,18 +1,18 @@
-const project = {
-  name: "project",
-  title: "Projects",
+const article = {
+  name: "article",
+  title: "Articles",
   type: "document",
   fields: [
     {
-      name: "name",
-      title: "name",
+      name: "title",
+      title: "Title",
       type: "string",
     },
     {
       name: "slug",
       title: "slug",
       type: "slug",
-      options: { source: "name" },
+      options: { source: "title" },
     },
     {
       name: "image",
@@ -33,22 +33,18 @@ const project = {
       ],
     },
     {
-      name: "repositoryUrl",
-      title: "Repository URL",
-      type: "url",
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [{ type: "block" }],
     },
     {
-      name: "deployedUrl",
-      title: "Deployed URL",
-      type: "url",
-    },
-    {
-      name: "stacks",
-      title: "Stacks",
+      name: "keywords",
+      title: "Keywords",
       type: "array",
       of: [{ type: "string" }],
     },
   ],
 };
 
-export default project;
+export default article;

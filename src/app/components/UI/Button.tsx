@@ -14,7 +14,7 @@ interface Props
 }
 
 const defaultStyles =
-  "bg-gray-200 p-2 rounded-sm font-bold flex md:flex-row  items-center gap-2 text-sm hover:bg-gray-400 transition-all ease-in-out";
+  "bg-gray-300 p-2 rounded-sm font-bold flex items-center gap-2 text-sm hover:bg-gray-400 transition-all ease-in-out";
 
 export function Button({ href, text, className, imgSrc, ...rest }: Props) {
   if (href) {

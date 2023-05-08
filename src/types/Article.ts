@@ -1,13 +1,12 @@
 import { PortableTextBlock } from "sanity";
 
-export interface Project {
+export interface Article {
   _id: string;
   _createdAt: string;
-  name: string;
+  title: string;
   slug: string;
   image: string;
   alt: string;
-  repositoryUrl: string;
-  deployedUrl: string;
-  stacks: string[];
+  content: PortableTextBlock[];
+  keywords: string[];
 }

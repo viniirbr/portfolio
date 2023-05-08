@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: 'cdn.jsdelivr.net',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.g2crowd.com',
+        port: '',
+      },
     ],
   },
 }
