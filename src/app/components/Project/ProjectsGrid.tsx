@@ -1,4 +1,3 @@
-import { Project } from "@/types/Project";
 import { ProjectItem } from "./ProjectItem";
 import { Grid } from "../UI/Grid";
 import { getProjects } from "@/base/sanity/sanity-utils";

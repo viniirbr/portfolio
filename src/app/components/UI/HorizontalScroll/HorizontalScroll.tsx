@@ -45,7 +45,7 @@ export function HorizontalScroll() {
               width={50}
               height={50}
               alt={index.toString()}
-              className="hover:scale-110 transition-transform ease-in-out duration-500 lg:w-16"
+              className="hover:scale-110 transition-transform ease-in-out duration-500 lg:w-16 lg:h-16"
             />
           ))}
         </span>

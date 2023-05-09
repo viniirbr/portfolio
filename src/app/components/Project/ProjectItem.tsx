@@ -11,7 +11,7 @@ export function ProjectItem({ project }: Props) {
   return (
     <Item
       href={project.deployedUrl}
-      imageAlt={project.alt}
+      imageAlt={"" || project.alt}
       title={project.name}
       imageSrc={project.image}
       openNewTab

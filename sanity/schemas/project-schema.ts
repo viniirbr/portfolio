@@ -19,7 +19,7 @@ const project = {
       title: "image",
       type: "image",
       options: { hotspot: true },
-      filds: [
+      fields: [
         {
           name: "alt",
           title: "alt",

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Article } from "@/types/Article";
 import { Item } from "../UI/Item";
 import { Keyword } from "../UI/Keyword";
-import { PortableText } from "@portabletext/react";
 
 interface Props {
   article: Article;
