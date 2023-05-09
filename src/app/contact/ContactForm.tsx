@@ -12,7 +12,6 @@ export function ContactForm() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
