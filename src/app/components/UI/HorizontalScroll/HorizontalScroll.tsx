@@ -24,7 +24,7 @@ export function HorizontalScroll() {
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
-    setScrolling(window.innerWidth < 82 * logos.length);
+    setScrolling(window.innerWidth - 280 < 82 * logos.length);
     window.addEventListener("resize", () => {
       setScrolling(window.innerWidth < 82 * logos.length);
     });

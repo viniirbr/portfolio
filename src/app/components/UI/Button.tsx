@@ -1,3 +1,5 @@
+"use client";
+import { CircleNotch } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
@@ -11,12 +13,20 @@ interface Props
   href?: string;
   className?: string;
   imgSrc?: string;
+  loading?: boolean;
 }
 
 const defaultStyles =
   "bg-gray-300 p-2 rounded-sm font-bold flex items-center gap-2 text-sm hover:bg-gray-400 transition-all ease-in-out";
 
-export function Button({ href, text, className, imgSrc, ...rest }: Props) {
+export function Button({
+  href,
+  text,
+  className,
+  imgSrc,
+  loading,
+  ...rest
+}: Props) {
   if (href) {
     return (
       <Link
@@ -34,7 +44,7 @@ export function Button({ href, text, className, imgSrc, ...rest }: Props) {
   if (rest.onClick) {
     return (
       <button {...rest} className={`${defaultStyles} ${className}`}>
-        {text}
+        {loading ? <CircleNotch className="animate-spin" /> : text}
       </button>
     );
   }

@@ -1,9 +1,10 @@
-import Link from "next/link";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { NavLink } from "./components/UI/NavLink";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["500", "700", "800"] });
 
 export const metadata = {
   title: "My portfolio",
@@ -17,11 +18,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-900`}>
+      <body
+        className={`${inter.className} bg-gray-900 py-20 px-4 lg:px-12 lg:py-28`}
+      >
         <header>
-          <nav className="flex items-center absolute right-4 top-4 gap-6">
-            <NavLink href="/" text="Home" />
-            <NavLink href="/contact" text="Reach out to me" />
+          <nav className="flex items-center absolute right-6 top-4 gap-6 lg:right-14 lg:top-8">
+            <NavLink
+              href="/"
+              text="Home"
+              className="after:right-40 lg:after:right-[182px] after:w-14"
+            />
+            <NavLink
+              href="/contact"
+              text="Reach out to me"
+              className="after:-right-1 lg:after:right-1 after:w-36 lg:after:w-[152px]"
+            />
           </nav>
         </header>
         {children}

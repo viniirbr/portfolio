@@ -15,14 +15,17 @@ export async function POST(request: NextRequest) {
       pass: process.env.EMAIL_PASS,
     },
   });
-
-  sendCustomerEmail(transporter, requestBody);
   sendConfirmationEmail(transporter, requestBody);
-
-  return new Response("Some response whatever");
+  try {
+    await sendCustomerEmail(transporter, requestBody);
+    return new Response("Email sent", { status: 200 });
+  } catch (error: any) {
+    const response = new Response(error.message, { status: 500 });
+    return response;
+  }
 }
 
-function sendCustomerEmail(
+async function sendCustomerEmail(
   transporter: Transporter<SMTPTransport.SentMessageInfo>,
   requestBody: EmailRequestBody
 ) {
@@ -32,13 +35,7 @@ function sendCustomerEmail(
     text: requestBody.from + "\n" + requestBody.message,
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      return console.log("error customer", error);
-    }
-
-    console.log("success customer", error);
-  });
+  return await transporter.sendMail(mailOptions);
 }
 
 function sendConfirmationEmail(
@@ -51,11 +48,5 @@ function sendConfirmationEmail(
     text: "This email is to confirm that I have received your message. I will get back to you as soon as possible. \n\nKind regards, \nVinicius Ribeiro",
   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      return console.log("error customer", error);
-    }
-
-    console.log("success customer", error);
-  });
+  transporter.sendMail(mailOptions);
 }
