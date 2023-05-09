@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Input } from "../components/UI/Input";
 import { TextArea } from "../components/UI/TextArea";
 import { Button } from "../components/UI/Button";
-import { set } from "sanity";
 import { ToastContainer, toast } from "react-toastify";
 
 export function ContactForm() {
@@ -39,7 +38,6 @@ export function ContactForm() {
     } catch (error: any) {
       console.log("error", error);
       setError(error.message);
-      toast.error(error.message);
     } finally {
       setLoading(false);
     }
