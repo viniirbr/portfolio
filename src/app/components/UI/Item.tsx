@@ -19,13 +19,7 @@ export function Item({
   openNewTab,
 }: Props) {
   return (
-    <Link
-      href={href}
-      target={openNewTab ? "_blank" : "_self"}
-      className=""
-      passHref
-      legacyBehavior
-    >
+    <Link href={href} target={openNewTab ? "_blank" : "_self"} className="">
       <div className="hover:cursor-pointer bg-white flex flex-col gap-2 rounded-md w-full h-fit p-4 shadow-md shadow-black hover:shadow-md hover:shadow-purple-500 hover:scale-[1.01] active:shadow-none transition-all duration-500 ease-out hover:ease-in">
         {imageSrc && (
           <Image
