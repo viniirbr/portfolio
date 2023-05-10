@@ -25,7 +25,6 @@ export function ContactForm() {
         throw new Error(
           "Something went wrong sending the email. Please try again later."
         );
-      //   setSuccess(true);
       toast.success(
         "Email sent successfully! If you don't receive a confirmation email from me, you probably mispeled your email",
         { autoClose: 8000 }
@@ -41,21 +40,6 @@ export function ContactForm() {
       setLoading(false);
     }
   }
-
-  //   if (success) {
-  //     return (
-  //       <section className="flex flex-col h-28 sm:px-4 xl:px-16 items-center justify-center md:h-96">
-  //         <h2 className="text-green-500 text-lg font-bold text-center">
-  //           Email sent successfully!
-  //         </h2>
-  //         <h3 className="text-green-500 text-md font-normal text-center">
-  //           If you don&apos;t receive a confirmation email from me, probably you
-  //           mispeled your email. In this case, reload the page and fill the form
-  //           again.{" "}
-  //         </h3>
-  //       </section>
-  //     );
-  //   }
 
   return (
     <form onSubmit={submit} className="w-full flex flex-col items-start gap-5">
@@ -95,7 +79,7 @@ export function ContactForm() {
         text="Send"
         onClick={() => {}}
         type="submit"
-        className="w-full justify-center bg-orange-500 text-white text-[20px] py-3 hover:bg-orange-600 active:bg-orange-400 disabled:bg-gray-400"
+        className="w-full justify-center bg-orange-500 text-white text-lg h-12 hover:bg-orange-600 active:bg-orange-400 disabled:bg-gray-400"
         disabled={!name || !email || !message || loading}
         loading={loading}
       />

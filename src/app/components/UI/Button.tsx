@@ -44,7 +44,7 @@ export function Button({
   if (rest.onClick) {
     return (
       <button {...rest} className={`${defaultStyles} ${className}`}>
-        {loading ? <CircleNotch className="animate-spin" /> : text}
+        {loading ? <CircleNotch size={22} className="animate-spin" /> : text}
       </button>
     );
   }
