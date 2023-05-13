@@ -1,8 +1,7 @@
-import "./globals.css";
+import "../globals.css";
 import { Inter } from "next/font/google";
-import { NavLink } from "./components/UI/NavLink";
+import { NavLink } from "../components/UI/NavLink";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"], weight: ["500", "700", "800"] });
 

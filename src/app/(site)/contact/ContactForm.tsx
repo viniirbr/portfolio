@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Input } from "../components/UI/Input";
-import { TextArea } from "../components/UI/TextArea";
-import { Button } from "../components/UI/Button";
+import { Input } from "../../components/UI/Input";
+import { TextArea } from "../../components/UI/TextArea";
+import { Button } from "../../components/UI/Button";
 import { ToastContainer, toast } from "react-toastify";
 
 export function ContactForm() {

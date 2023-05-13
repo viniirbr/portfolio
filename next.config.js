@@ -20,6 +20,11 @@ const nextConfig = {
         hostname: 'images.g2crowd.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.svgrepo.com',
+        port: '',
+      },
     ],
   },
 }

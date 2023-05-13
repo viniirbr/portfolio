@@ -10,7 +10,6 @@ interface Props {
 export function ProjectItem({ project }: Props) {
   return (
     <Item
-      href={project.deployedUrl}
       imageAlt={"" || project.alt}
       title={project.name}
       imageSrc={project.image}
@@ -20,6 +19,11 @@ export function ProjectItem({ project }: Props) {
         text="Repository and README"
         href={project.repositoryUrl}
         imgSrc="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"
+      />
+      <Button
+        text="Deployed application"
+        href={project.deployedUrl}
+        imgSrc="https://www.svgrepo.com/show/327408/logo-vercel.svg"
       />
       <section className="flex items-center">
         {project.stacks.map((stack, id) => (
