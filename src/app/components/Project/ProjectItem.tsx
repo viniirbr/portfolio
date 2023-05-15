@@ -25,7 +25,7 @@ export function ProjectItem({ project }: Props) {
         href={project.deployedUrl}
         imgSrc="https://www.svgrepo.com/show/327408/logo-vercel.svg"
       />
-      <section className="flex items-center">
+      <section className="flex items-center gap-3">
         {project.stacks.map((stack, id) => (
           <Image key={id} src={stack} width={50} height={50} alt="" />
         ))}
