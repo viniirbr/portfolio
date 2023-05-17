@@ -19,7 +19,7 @@ export function Item({
   openNewTab,
 }: Props) {
   const fixedChildren = (
-    <div className="bg-white flex flex-col gap-2 rounded-md w-full h-fit p-4 shadow-md shadow-black hover:shadow-md hover:shadow-purple-500 hover:scale-[1.01] active:shadow-none transition-all duration-500 ease-out hover:ease-in">
+    <div className="bg-white flex flex-col gap-4 rounded-md w-full h-fit p-4 shadow-md shadow-black hover:shadow-md hover:shadow-purple-500 hover:scale-[1.01] active:shadow-none transition-all duration-500 ease-out hover:ease-in">
       {imageSrc && (
         <Image
           src={imageSrc}
@@ -30,7 +30,7 @@ export function Item({
           unoptimized
         />
       )}
-      <h3 className="text-gray-800 text-lg font-bold">{title}</h3>
+      <h3 className="text-gray-800 text-lg font-extrabold">{title}</h3>
       {children}
     </div>
   );
